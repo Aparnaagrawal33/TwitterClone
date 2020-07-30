@@ -3,5 +3,8 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "C:\\Users\\Aparna\\.virtualenvs\\tweetme2-PjOthrv1\\Scripts\\python.exe"
+	}
 }
