@@ -9,12 +9,14 @@
         users feed only
         who they follow
 
-2. twwets
+2. tweets
+    -> User permisisons
     ->creating
         ->text
         ->image
     ->delete
     ->retweet
+    -> liking & Unliking
 
 3. Following/Followers
 
