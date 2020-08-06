@@ -14,6 +14,7 @@ class TweetLike(models.Model):
 class Tweet(models.Model):
     #maps to SQL data
     #id = models.AutoField(primary_key=True)
+    parent = models.ForeignKey("self", null = True, on_delete=models.SET_NULL)
     user = models.ForeignKey(User,on_delete=models.CASCADE)  #many users can have many tweets
     likes = models.ManyToManyField(User, related_name = 'tweet_user', blank = True, through=TweetLike)
     content= models.TextField(blank = True, null = True)
