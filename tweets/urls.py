@@ -8,7 +8,7 @@ from .views import (
     tweet_action_view
     )
 '''
-BASEENDPOINT FOR CLIENTS:
+BASEENDPOINT FOR CLIENTS: URL
 /api/tweets/
 '''
 urlpatterns = [
