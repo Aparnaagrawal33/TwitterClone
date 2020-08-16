@@ -3,14 +3,16 @@
 {% block head_title %}TWeETME{% endblock head_title %}
 
 {% block content %}
-    <div class="row text-center">
+    <div id = "tweetme-2"></div>
+    
+    <div class="row text-center d-none">
         <div class="col">
             <h2>Welcome to TWEETME</h12>
 
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3 d-none">
         <div class = "col-md-4 mx-auto col-10">
             <form class="form" method="POST" id = 'tweet-create-form' action="/create-tweet">{%csrf_token%}
                 <div class = 'd-none alert alert-danger' id='tweet-create-form-error'></div>
@@ -20,9 +22,8 @@
             </form>
         </div>
     </div>
-    
-    <div class="row " id = "tweets">
-        Replace Me
+    <div class="row d-none" id = "tweets">
+        Loading...
     </div>
 
     <script>
@@ -157,7 +158,7 @@
 
         function handleTweetActionBtn(tweet_id, current_count, action )
         {
-            const csrftoken = getCookie('csrftoken');
+            
             console.log(tweet_id, current_count)
             const url = 'api/tweets/action'
             const method = 'POST'
@@ -166,6 +167,7 @@
                 action: action 
             })
             const xhr = new XMLHttpRequest()
+            const csrftoken = getCookie('csrftoken');
             xhr.open(method,url)
             xhr.setRequestHeader("Content-Type", "application/json")
             xhr.setRequestHeader('HTTP_X_REQUESTED_WITH',"XMLHttpRequest")
